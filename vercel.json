@@ -1,0 +1,11 @@
+{
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+  ],
+  "routes": [
+    { "src": "^/sw.js$", "dest": "/sw.js" },
+    { "src": "^/manifest.json$", "dest": "/manifest.json" },
+    { "handle": "filesystem" },
+    { "src": "^/(.*)$", "dest": "/index.html" }
+  ]
+}
